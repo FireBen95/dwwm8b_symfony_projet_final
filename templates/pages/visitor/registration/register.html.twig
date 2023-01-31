@@ -1,0 +1,94 @@
+{% extends "themes/base_visitor.html.twig" %}
+
+{% block title %}- Inscription{% endblock %}
+
+{% block main %}
+    <h1 class="text-center my-3 display-5">Inscription</h1>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-8 col-lg-6 mx-auto bg-white shadow p-4">
+                {{ form_start(registrationForm) }}
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="registration_form_firstName">Prénom</label>
+                            <div class="text-danger">{{ form_errors(registrationForm.firstName) }}</div>
+                            {{ form_widget(registrationForm.firstName, {'attr' : {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="registration_form_lastName">Nom</label>
+                            <div class="text-danger">{{ form_errors(registrationForm.lastName) }}</div>
+                            {{ form_widget(registrationForm.lastName, {'attr' : {'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <label for="registration_form_email">Email</label>
+                            <div class="text-danger">{{ form_errors(registrationForm.email) }}</div>
+                            {{ form_widget(registrationForm.email, {'attr' : {'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <label for="registration_form_password_first">Mot de passe</label>
+                            <div class="text-danger">{{ form_errors(registrationForm.password.first) }}</div>
+                            {{ form_widget(registrationForm.password.first, {'attr' : {'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <label for="registration_form_password_second">Confirmation du mot de passe</label>
+                            {{ form_widget(registrationForm.password.second, {'attr' : {'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <div class="text-danger">{{ form_errors(registrationForm.agreeTerms) }}</div>
+                            {{ form_widget(registrationForm.agreeTerms) }}
+                            <label for="registration_form_agreeTerms">Veuillez accepter <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">les conditions générales d'utilisation</a></label>
+                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Les conditions générales d'utilisation</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, vel optio. Nemo doloribus quia voluptate pariatur aliquid illo, facilis, cum deserunt voluptates nostrum ab? Esse ex consequuntur totam qui quia?
+                                        Enim eaque aspernatur est quis voluptate dolorum ad ea, a eligendi minus cumque totam id. Facere, officia labore in optio libero cupiditate itaque porro, et, mollitia tenetur reprehenderit nobis natus?
+                                        Consectetur, fugit. Nihil fugiat assumenda fugit obcaecati! Unde quia fugit nobis cumque asperiores ipsa ad esse nesciunt, voluptates, voluptas, doloremque iste molestias? Delectus fugit ea nobis quas accusantium id vitae?
+                                        Molestias adipisci officia ipsam cum a, iste harum iusto ea! Repudiandae tempora architecto molestiae quae itaque dolor atque veniam blanditiis delectus error dolorem perspiciatis nulla accusamus laborum, doloribus at consequatur!
+                                        Odit, laboriosam. Dolorem quasi assumenda, corrupti totam commodi porro fugit aut numquam nulla minus accusantium iure illum a vero, perspiciatis nisi. Natus, veniam nihil dignissimos iure dolor nobis perspiciatis modi!
+                                        Quisquam at, laborum tempora iusto corporis laudantium ab, ex voluptatum quos itaque sequi velit repellat numquam perspiciatis debitis asperiores ad accusantium natus exercitationem. Est fuga numquam consequuntur voluptatibus enim animi.
+                                        Saepe harum ea aliquam voluptatem. Totam minima temporibus, eaque corporis deserunt incidunt aliquid nesciunt delectus! Numquam quas voluptatibus expedita excepturi placeat, recusandae earum ipsam id aut labore veniam error eos.
+                                        Possimus porro voluptatem tenetur laboriosam alias a, quasi maxime quo, inventore non assumenda deserunt mollitia quibusdam voluptas optio nam, debitis totam expedita. Harum eaque, molestiae aperiam impedit distinctio cum sit!
+                                        Dolores maxime quaerat eum quos voluptatum placeat reiciendis voluptatibus sapiente, quidem cupiditate nulla molestias beatae? Vitae ex quia error, deleniti optio hic mollitia unde reiciendis excepturi suscipit ea pariatur dolores!
+                                        Dolorem reiciendis eos quae? Dolorum possimus odit non blanditiis a sapiente delectus cum laboriosam nihil fugiat dolore cupiditate velit culpa et, laborum nobis obcaecati quo necessitatibus aspernatur! Praesentium, ipsa ut.
+                                        Eius enim porro, magni cumque iste aliquam non ipsum doloribus dolor corrupti vitae repellat accusantium tenetur praesentium ad corporis aspernatur dignissimos et culpa debitis. Illo nulla dolor excepturi quas ab?
+                                        Eligendi vel illum soluta odio, voluptatum magni tempora. Impedit accusantium, nisi eius quod perferendis provident modi praesentium illum consequuntur accusamus, laboriosam velit ex culpa veniam deserunt odit delectus obcaecati officiis?
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <input type="submit" class="btn btn-primary" formnovalidate>
+                        </div>
+                    </div>
+                {{ form_end(registrationForm) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
